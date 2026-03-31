@@ -36,7 +36,7 @@ Read: [What is version control?](https://www.atlassian.com/git/tutorials/what-is
 
 ---
 
-## Basic concepts
+## Basic concepts of Version Control Systems
 
 - **Repository** (or **Repo**): storage for all files, metadata and their revision data for a project
 - **Commit**: revision of code (a snapshot of the repository at a specific point in time)
@@ -46,6 +46,7 @@ Read: [What is version control?](https://www.atlassian.com/git/tutorials/what-is
 - **Checkout**: choosing specified version of code or development branch to work with
 - **Merge**: combining changes of different branches together
 - **Conflict**: occurs when there is different modifications in the same file while trying to merge branches
+  - usually needs to be resolved manually by the developer
 
 ---
 
@@ -55,13 +56,15 @@ Read: [What is version control?](https://www.atlassian.com/git/tutorials/what-is
 - One of the most popular version control systems currently available
 - Development started By Linus Torvalds 2005
 - Created initially for Linux kernel development
-- Distributed Version Control System (DVCS): instead of a central repository of all the version history, each user has a full-fledged repository with complete history and full version-tracking capabilities, independent of network access or a central server
 - Content agnostic: can be used for anykind of files
   - with some restrictions
   - full functionality for plain text files
 - Is used locally (remote server not mandatory)
+- Distributed Version Control System (DVCS): instead of a central repository of all the version history, each user has a full-fledged repository with complete history and full version-tracking capabilities, independent of network access or a central server
 
 ![arch image](images/git-arch.png)
+
+Same repository can be cloned to multiple local repositories, and changes can be shared between them by pushing and pulling changes to/from remote repositories.
 
 ---
 
@@ -87,7 +90,7 @@ Read: [What is version control?](https://www.atlassian.com/git/tutorials/what-is
 - `git log`: show revision history
 - `git branch <newBranchName>`: create a new branch based on the current branch
 - `git tag`: create a reference to a specific commit in the repository's history
-- `git checkout <branchName>`: choose a branch or a revision to work with
+- `git checkout <branchName>`: choose a branch or a revision to work with (update working copy of files to match the chosen branch/revision)
 - `git diff`: shows the differences in files between working copy and the last commit
 - `git merge`: combine changes from one branch into another
 - `git rebase`: modify the commit history of a branch
@@ -96,17 +99,17 @@ Read: [What is version control?](https://www.atlassian.com/git/tutorials/what-is
 - `git reflog`: "reference log", maintains a log of all reference updates in a Git repository including branch creations, checkouts, commits, merges, rebases, etc.
 - `gitk`: graphical user interface (GUI) tool that comes bundled with Git
 
+Basic workflow of making changes to the codebase and committing them to the repository:
+
+1. Make changes to the codebase in your working directory (edit files).
+2. Use `git add` to stage the changes you want to include in the next commit.
+3. Use `git commit` to create a new commit with the staged changes and a descriptive commit message.
+
 ![Workflow graph](images/git-workflow.png)
 
 [Source](http://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
 
-### Synchronising with remotes
 
-- `git clone <URI>`: clone an existing repository (create a new local copy of the repo)
-- `git remote`: manage linking with remote repositories
-- `git push`: upload the changes in local repo (new commits) to chosen remote repository
-- `git pull`: download the changes in remote repo ( get new changes and commits) from remote repo
-- `git fetch`: retrieves changes from a remote repository, but it does not automatically merge those changes into your local working branch
 
 ---
 
@@ -238,7 +241,11 @@ For more information on writing good commit messages, see the following articles
 - basically branches are just pointers to commits
 - different [branching strategies](#git-workflows-branching-strategies) can be adapted to project
 
-Some examples of working with branches:
+```mermaid
+TODO: example of branching graph
+```
+
+Some examples of commands used when working with branches:
 
 ```sh
 git branch   # List local branches in repo
@@ -525,7 +532,9 @@ gitGraph
 
 ---
 
-## [GitHub](https://github.com)
+## Remote repositories and hosting services
+
+### [GitHub](https://github.com)
 
 - **GitHub != Git**: Git is the application, GitHub is a company and a web service utilizing Git and providing a lot more than just version tracking.
 - Commercial service providing a remote git repository server, project management tools, wiki, issue tracker, webpage hosting, etc.
@@ -536,12 +545,18 @@ gitGraph
   - Note: collaborators have always the write access to the repository
 - **Pull request**: A request to merge changes from one project branch into another
 
-## Other remote repository service providers
+### Other remote repository service providers
 
 - [Bitbucket](https://bitbucket.org) is another popular git repo hosting service providing free private repos for small teams
 - [GitLab](https://about.gitlab.com/install/) provides a commercial service or free open source community edition to installed on one's own server
 
 ## Working with remote repositories
+
+- `git clone <URI>`: clone an existing repository (create a new local copy of the repo)
+- `git remote`: manage linking with remote repositories
+- `git push`: upload the changes in local repo (new commits) to chosen remote repository
+- `git pull`: download the changes in remote repo ( get new changes and commits) from remote repo
+- `git fetch`: retrieves changes from a remote repository, but it does not automatically merge those changes into your local working branch
 
 `git pull`, `git push`, and `git fetch` are essential Git commands for interacting with remote repositories. They allow you to synchronize your local repository with a remote repository, exchange changes with collaborators, and keep your codebase up to date.
 
