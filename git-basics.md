@@ -242,7 +242,28 @@ For more information on writing good commit messages, see the following articles
 - different [branching strategies](#git-workflows-branching-strategies) can be adapted to project
 
 ```mermaid
-TODO: example of branching graph
+gitGraph
+    commit id:"A" tag:"Main Start"
+    branch feature
+    checkout feature
+    commit id:"B" tag:"Feature1 Start"
+    commit id:"C" tag:"Feature1 Progress"
+    branch feature2
+    checkout feature2
+    commit id:"G" tag:"Feature2 Start"
+    commit id:"H" tag:"Feature2 Progress"
+    checkout main
+    commit id:"D" tag:"Main Progress"
+    checkout feature
+    commit id:"E" tag:"Feature1 Complete"
+    checkout main
+    merge feature
+    commit id:"F" tag:"After Feature1 Merge"
+    checkout feature2
+    commit id:"I" tag:"Feature2 Complete"
+    checkout main
+    merge feature2
+    commit id:"J" tag:"After Feature2 Merge"
 ```
 
 Some examples of commands used when working with branches:
