@@ -63,6 +63,7 @@ Read: [What is version control?](https://www.atlassian.com/git/tutorials/what-is
 - Distributed Version Control System (DVCS): instead of a central repository of all the version history, each user has a full-fledged repository with complete history and full version-tracking capabilities, independent of network access or a central server
 
 ![arch image](images/git-arch.png)
+*https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control*
 
 Same repository can be cloned to multiple local repositories, and changes can be shared between them by pushing and pulling changes to/from remote repositories.
 
@@ -106,8 +107,7 @@ Basic workflow of making changes to the codebase and committing them to the repo
 3. Use `git commit` to create a new commit with the staged changes and a descriptive commit message.
 
 ![Workflow graph](images/git-workflow.png)
-
-[Source](http://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
+*https://git-scm.com/book/en/v2/Getting-Started-What-is-Git*
 
 
 
@@ -118,8 +118,7 @@ Basic workflow of making changes to the codebase and committing them to the repo
 - Git stores snapshots of all edited files in commits
 
 ![Revisions illustration](images/git-revisions.png)
-
-[Source](http://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
+*https://git-scm.com/book/en/v2/Getting-Started-What-is-Git*
 
 1. Open terminal/Git bash in your local project folder
 1. Make sure you have set username and email for Git (these are saved within commit data)
@@ -238,6 +237,7 @@ For more information on writing good commit messages, see the following articles
 
 - a branch is a separate line of development within a Git repository
 - allows multiple developers to work on different features or fixes simultaneously without interfering with each other
+- allows a developer to work on a new feature or bug fix without affecting the main codebase until the changes are ready to be merged
 - basically branches are just pointers to commits
 - different [branching strategies](#git-workflows-branching-strategies) can be adapted to project
 
